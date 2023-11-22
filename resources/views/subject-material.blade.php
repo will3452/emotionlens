@@ -172,7 +172,7 @@
 
                     // Convert the canvas content to a data URL and set it as the image source
                     image.src = canvas.toDataURL('image/png');
-                }, 1000 * 60);
+                }, 1000 * 30);
             })
         })();
     </script>
