@@ -22,6 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'type',
+        'image', 
     ];
 
     const TYPE_TEACHER = 'Teacher';
@@ -46,4 +47,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function subjects () {
+        return $this->belongsToMany(Subject::class, 'user_subjects', 'user_id', 'subject_id'); 
+    }
 }

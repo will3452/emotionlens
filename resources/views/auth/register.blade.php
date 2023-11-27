@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" x-data="{canRegister:false, }">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -75,10 +75,18 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="termsandcondition" class="col-md-4 col-form-label text-md-end">
+                                Read the terms and conditions and check the box to continue the registration <a href="/tnc" target="_blank">here</a>.
+                            </label>
 
+                            <div class="col-md-6">
+                                <input id="termsandcondition" type="checkbox" x-model="canRegister" name="termsandcondition" required>
+                            </div>
+                        </div>
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" :disabled="!canRegister">
                                     {{ __('Register') }}
                                 </button>
                             </div>

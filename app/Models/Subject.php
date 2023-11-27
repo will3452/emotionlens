@@ -15,6 +15,7 @@ class Subject extends Model
         'description',
         'instructor_id',
         'archived_at',
+        'theme', 
     ]; 
 
     public function instructor () {

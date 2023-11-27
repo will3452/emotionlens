@@ -14,7 +14,7 @@
     @endif
     @if (request()->code != $subject->code)
         <form action="{{url()->current()}}" class="mt-4">
-            <input type="text" name="code" class="p-2 border rounded" placeholder="Enter Secret code."> <button class="bg-white text-gray-800 bg-gray-300 p-2 font-bold rounded">APPLY</button>
+            <input type="password" name="code" class="p-2 border rounded" placeholder="Enter Secret code."> <button class="bg-white text-gray-800 bg-gray-300 p-2 font-bold rounded">APPLY</button>
         </form>
     @else 
         <div class="my-4"></div>
