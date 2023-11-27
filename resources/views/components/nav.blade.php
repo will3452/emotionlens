@@ -1,6 +1,6 @@
 <nav class="flex w-full justify-between  ">
-    <div class="flex items-end">
-        <h1 class="font-bold text-4xl">EmotionLens</h1> <span class="mx-2 text-gray-800">You're login as <span class="font-bold">{{auth()->user()->type}}</span></span>
+    <div class="flex items-center">
+        <img src="/logo.jpg" class="w-16 rounded-full mr-2" alt=""><h1 class="font-bold text-4xl">EmotionLens</h1> <span class="mx-2 text-gray-800">You're login as <span class="font-bold">{{auth()->user()->type}}</span></span>
     </div>
     <div class="flex items-center">
         @if (url()->current() != route('home'))
