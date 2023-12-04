@@ -14,8 +14,13 @@
         <div class="{{url()->current() == route('profile',['user' => auth()->id()]) ? 'underline underline-offset-2 ': ''}} px-2">
             <a href="/profile/{{auth()->id()}}">Profile</a>
         </div>
-        <div class=" px-2">
-            <a href="/logout">Logout</a>
+        <div class=" px-2" x-data="{
+            _confirm() {
+             let answer = confirm('are you sure you want to logout?')   
+             if (answer) document.location.href = '/logout'; 
+            }
+        }">
+            <a x-on:click="_confirm">Logout</a>
         </div>
         <span class="font-thin px-2">
             Hello,

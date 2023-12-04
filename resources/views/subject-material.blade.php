@@ -126,7 +126,14 @@
                 <template x-if="viewEmotion">
                     <div class="bg-white p-4">
                         @foreach ($item as $i)
-                            v
+                        <div class="px-2 flex justify-between">
+                            <div>
+                                {{$i->user->name}} | {{$i->mood}}
+                            </div>
+                            <div>
+                                {{$i->created_at->diffForHumans()}}
+                            </div>
+                        </div>
                         @endforeach
                     </div>
                 </template>
